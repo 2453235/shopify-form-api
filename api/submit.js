@@ -5,11 +5,11 @@ export default async function handler(req, res) {
 
   const { email, sqm, productTitle, productId } = req.body;
 
-  const response = await fetch('https://TVŮJ-OBCHOD.myshopify.com/admin/api/2023-10/customers.json', {
+  const response = await fetch('https://2gkbbm-ky.myshopify.com/admin/api/2023-10/customers.json', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Shopify-Access-Token': 'TVŮJ_ACCESS_TOKEN'
+      'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN
     },
     body: JSON.stringify({
       customer: {
